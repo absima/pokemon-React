@@ -1,47 +1,54 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { ProjContext } from "../setContext";
 import typeColors from "../colorData/typeColors";
 
 const clrs = typeColors();
 console.log(clrs)
 
 export default function PokemonInfo() {
-  
-  const { pokedata } = useContext(ProjContext);
   let params = useParams();
-  if (pokedata.length>0){
-    let pkmn = pokedata.find(item => item.id.toString() === params.pokemonID)
+  const [pinfo, setPinfo] = useState(0);
+  const [perror, setPerror] = useState('');
+  const [items, setItems] = useState('');
+  useEffect(() => {
+    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${params.pokemonID}/${params.info}`)
+      .then((response) => response.json())
+      .then((output) => setPinfo(output))
+      .catch(() => {
+        setPerror("Error: Fetching Failed");
+      })
+  }, [])
+
+  console.log('pinfo', pinfo)
+  if (pinfo !== 0) {
+    let items
+    const title = params.info;
+    const titmod = title.charAt(0).toUpperCase()+title.slice(1);
+    if (title === 'name') {
+      const kys = Object.keys(pinfo)
+      items = ['EN','JA','CH','FR'].map((item, i)=><li>{pinfo[kys[i]]} ({item})</li>)
+    }
+    else if (title === 'type') {
+      items = pinfo.map(element => <li>{element}</li>);
+    }
+    else if (title === 'base'){
+      const kys = Object.keys(pinfo)
+      items = kys.map(item=><li>{pinfo[item]}: {item}</li>)
+    }
+
     return (
-      <main 
+      <main
         style={{ padding: "1rem" }}
       >
-        <div className="pokepardiv">
-          <div className="pokedetails">
-            <h2>{pkmn.id}. {pkmn.name.english}</h2>
-            <h3>Translated Names</h3>
-            <ul>
-              <li>{pkmn.name.chinese}</li>
-              <li>{pkmn.name.japanese}</li>
-              <li>{pkmn.name.french}</li>
-            </ul>
-            <h3>Type</h3>
-            <ul>
-              <li>{pkmn.type[0]}</li>
-            </ul>
-      
-            <h3>Base</h3>
-            <ul>
-              <li>{pkmn.base["HP"]}</li>
-              <li>{pkmn.base["Speed"]}</li>
-              <li>{pkmn.base["Attack"]}</li>
-              <li>{pkmn.base["Sp. Attack"]}</li>
-              <li>{pkmn.base["Defense"]}</li>
-              <li>{pkmn.base["Sp. Defense"]}</li>
-            </ul>
-          </div>
-        </div> 
+        <div 
+          style={{lineHeight: "25px", textAlign: "left"}}
+        >
+          
+          <h3> {titmod} </h3>
+          <ul> {items} </ul>
+        </div>
       </main>
-    );
-  } 
+
+    )
+  }
 }

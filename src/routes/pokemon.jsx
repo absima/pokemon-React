@@ -1,51 +1,28 @@
 import { useParams } from "react-router-dom";
-// // import pokedata from "../data/pokedex"// assert {type: 'json'};
-// import { getPokemons } from "../data/pokedex";
-
-import { useContext } from "react";
-import { ProjContext } from "../setContext";
+import { useState, useEffect } from "react";
 import typeColors from "../colorData/typeColors";
 
 const clrs = typeColors();
 console.log(clrs)
-// let pokedata = getPokemons();
 
 export default function Pokemon() {
-  
-  const { pokedata } = useContext(ProjContext);
-  // console.log(pokedata);
   let params = useParams();
-  // console.log(typeof params.pokemonID)
-  if (pokedata.length>0){
-    let pkmn = pokedata.find(item => item.id.toString() === params.pokemonID)
-    // console.log('colors', clrs)
-    // console.log(pkmn);
+  const [pkmn, setPkmn] = useState([]);
+  const [ oerror, setOerror] = useState('');
+  useEffect(() => {
+    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${params.pokemonID}`)
+    .then((response) => response.json())
+    .then((output)=> setPkmn(output))
+    .catch(() => {
+      setOerror("Error: Fetching Failed");
+    })
+  }, [])
+
+
+  if (pkmn["id"]){
     return (
       <main style={{ padding: "1rem" }}>
         <div className="pokepardiv">
-          {/* <div className="pokedetails">
-            <h2>{pkmn.id}. {pkmn.name.english}</h2>
-            <h3>Translated Names</h3>
-            <ul>
-              <li>{pkmn.name.chinese}</li>
-              <li>{pkmn.name.japanese}</li>
-              <li>{pkmn.name.french}</li>
-            </ul>
-            <h3>Type</h3>
-            <ul>
-              <li>{pkmn.type[0]}</li>
-            </ul>
-      
-            <h3>Base</h3>
-            <ul>
-              <li>{pkmn.base["HP"]}</li>
-              <li>{pkmn.base["Speed"]}</li>
-              <li>{pkmn.base["Attack"]}</li>
-              <li>{pkmn.base["Sp. Attack"]}</li>
-              <li>{pkmn.base["Defense"]}</li>
-              <li>{pkmn.base["Sp. Defense"]}</li>
-            </ul>
-          </div> */}
           <div className="pokemon-card-container"
             style={{backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 90%, 50%)`}}
           >
@@ -73,7 +50,7 @@ export default function Pokemon() {
               >
                 <img className = 'card_image'
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg`} 
-                  alt="Pikachu" />
+                  alt={`${pkmn.name.english}`} />
               </div>
               <div className="content"
                 style={{backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 100%, 80%)`}}

@@ -7,28 +7,26 @@ import {
   Route,
 } from "react-router-dom";
 
-import CtxtProvider from './setContext';
-
 import App from "./App";
 import Help from "./routes/help";
 import Pokemons from "./routes/pokemons";
 import Pokemon from "./routes/pokemon";
+import PokemonInfo from "./routes/pokemonInfo";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 root.render(
   <BrowserRouter>
-    <CtxtProvider>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="help" element={<Help />} />
-          {/* <Route path="invoices" element={<Pokemons />} /> */}
           <Route path="pokemon" element={<Pokemons />}>
             <Route index element={ 
               <main style={{ padding: "1rem" }}>
                 <p>Select a pokemon character</p>
               </main>}/>
             <Route path=":pokemonID" element={<Pokemon />} />
+            <Route path=":pokemonID/:info" element={<PokemonInfo />}/>
           </Route>
           <Route
             path="*"
@@ -42,8 +40,6 @@ root.render(
           />
         </Route>
       </Routes>
-    </CtxtProvider>
   </BrowserRouter>
-  // rootElement
 );
 
