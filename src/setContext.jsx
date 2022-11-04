@@ -5,7 +5,8 @@ const CtxtProvider = (props) => {
   const [pokedata, setPokedata] = useState([]);
   const [ error, setError] = useState('');
   useEffect(() => {
-    fetch(`https://pokedex-dss-api.herokuapp.com/pokedex`)
+    // fetch(`https://pokedex-dss-api.herokuapp.com/pokedex`)
+    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
     .then((response) => response.json())
     .then((output)=> setPokedata(output))
     .catch(() => {
