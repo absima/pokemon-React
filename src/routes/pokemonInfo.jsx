@@ -37,37 +37,28 @@ export default function PokemonInfo() {
     }
 
     return (
-      <main
-        style={{ padding: "1rem" }}
-      >
+      <main style={{ padding: "1rem" }} >
         <div>
-        <nav>
-          <NavLink
-            style={({ isActive }) => {
-              return {
-                // display: "inline-block",
-                // margin: "1rem 0",
-                color: isActive ? "gray" : "",
-              };
-            }}
-            to={`/pokemon/${pkmn.id}`}
-            // to={`#`}
-            key={"back"}
-          >
-            <div className="backdiv">
-            &#8678; back
-            </div>
-
-          </NavLink> 
-        </nav>
-        <div 
-          style={{lineHeight: "25px", textAlign: "left"}}
-        >
-          
-          <h3> {titmod} </h3>
-          <ul> {items} </ul>
-        </div>
-        <Outlet />
+          <nav>
+            <NavLink
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "gray" : "",
+                };
+              }}
+              to={`/pokemon/${pkmn.id}`}
+              key={"back"}
+            >
+              <div className="backdiv">
+              &#8678; back
+              </div>
+            </NavLink> 
+          </nav>
+          <div style={{lineHeight: "25px", textAlign: "left"}}>  
+            <h3> {titmod} </h3>
+            <ul> {items} </ul>
+          </div>
+          <Outlet />
         </div>
         
       </main>

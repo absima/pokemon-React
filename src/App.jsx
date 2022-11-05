@@ -6,35 +6,21 @@ import Help from "./routes/help";
 import Pokemons from "./routes/pokemons";
 import Pokemon from "./routes/pokemon";
 import PokemonInfo from "./routes/pokemonInfo";
-
-import './App.css'
-
+import Searchbar from "./routes/searchbar";
 export default function App() {
   // const {Outline,Pokemons,Pokemon,PokemonInfo,Help} = useContext(ProjContext);
   return (
-      <Routes>
-        <Route path="/" element={<Outline />}>
-          <Route path="help" element={<Help />} />
-          <Route path="pokemon" element={<Pokemons />}>
-            <Route index element={
-              <main style={{ padding: "1rem" }}>
-                <p>Select a pokemon character</p>
-              </main>} />
-            <Route path=":pokemonID" element={<Pokemon />} />
-            <Route path=":pokemonID/:info" element={<PokemonInfo />} />
-            {/* </Route> */}
-          </Route>
-          <Route
-            path="*"
-            element={
-              <main
-                style={{ padding: "1rem" }}
-              >
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
-        </Route>
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Outline />} >
+        <Route path="help" element={<Help />} />
+        <Route path="/pokemon" element={<Pokemons />} />
+        <Route path="/pokemon/:pokemonID" element={<Pokemon />} />
+        <Route path="/pokemon/:pokemonID/:info" element={<PokemonInfo />} />
+        <Route path="*" element={
+          <main style={{ padding: "1rem" }}>
+            <p>There's nothing here!</p>
+          </main>}/>
+      </Route>
+    </Routes>
   );
 }

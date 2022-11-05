@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
 // import Outline from "./routes/outline";
 // import Pokemons from "./routes/pokemons";
 // import Pokemon from "./routes/pokemon";
@@ -8,6 +10,8 @@ import { createContext, useState, useEffect } from "react";
 const CtxtProvider = (props) => {
   const [pokedata, setPokedata] = useState([]);
   const [error, setError] = useState('');
+  let [searchParams, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
       .then((response) => response.json())
@@ -17,7 +21,7 @@ const CtxtProvider = (props) => {
       })
   }, [])
   return (
-    <ProjContext.Provider value={{pokedata, error}}> 
+    <ProjContext.Provider value={{pokedata, error, searchParams, setPokedata, setSearchParams}}> 
       {props.children}
     </ProjContext.Provider>
   )
