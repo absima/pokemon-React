@@ -1,38 +1,33 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { ProjContext } from "../setContext";
 // import typeColors from "../colorData/typeColors";
-
 // const clrs = typeColors();
 
 export default function PokemonInfo() {
-  let pinfo_params = useParams();
-  const [pinfo, setPinfo] = useState(0);
-  const [perror, setPerror] = useState('');
-  const [items, setItems] = useState('');
-  useEffect(() => {
-    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${pinfo_params.pokemonID}/${pinfo_params.info}`)
-      .then((response) => response.json())
-      .then((output) => setPinfo(output))
-      .catch(() => {
-        setPerror("Error: Fetching Failed");
-      })
-  }, [])
-
-  console.log('pinfo', pinfo)
-  if (pinfo !== 0) {
+  const { pokedata } = useContext(ProjContext);
+  const params = useParams();
+  const title = params.info;
+  // console.log(params)
+  // console.log(pokedata);
+  if (pokedata.length > 0) {
+    const pkmn = pokedata.find(item => item.id.toString() === params.pokemonID);
+    const pinfo = pkmn[title];
+   
     let items
-    const title = pinfo_params.info;
     const titmod = title.charAt(0).toUpperCase()+title.slice(1);
     if (title === 'name') {
       const kys = Object.keys(pinfo)
-      items = ['EN','JA','CH','FR'].map((item, i)=><li>{pinfo[kys[i]]} ({item})</li>)
+      items = ['EN','JA','CH','FR'].map((item, i)=>
+        <li key={i}>{pinfo[kys[i]]} ({item})</li>)
     }
     else if (title === 'type') {
       items = pinfo.map(element => <li>{element}</li>);
     }
     else if (title === 'base'){
       const kys = Object.keys(pinfo)
-      items = kys.map(item=><li>{pinfo[item]}: {item}</li>)
+      items = kys.map((item, i)=>
+      <li key={i}>{pinfo[item]}: {item}</li>)
     }
 
     return (
@@ -51,3 +46,52 @@ export default function PokemonInfo() {
     )
   }
 }
+
+
+// export default function PokemonInfo() {
+//   let params = useParams();
+//   const [pinfo, setPinfo] = useState(0);
+//   const [perror, setPerror] = useState('');
+//   const [items, setItems] = useState('');
+//   useEffect(() => {
+//     fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${params.pokemonID}/${params.info}`)
+//       .then((response) => response.json())
+//       .then((output) => setPinfo(output))
+//       .catch(() => {
+//         setPerror("Error: Fetching Failed");
+//       })
+//   }, [])
+
+//   console.log('pinfo', pinfo)
+//   if (pinfo !== 0) {
+//     let items
+//     const title = params.info;
+//     const titmod = title.charAt(0).toUpperCase()+title.slice(1);
+//     if (title === 'name') {
+//       const kys = Object.keys(pinfo)
+//       items = ['EN','JA','CH','FR'].map((item, i)=><li>{pinfo[kys[i]]} ({item})</li>)
+//     }
+//     else if (title === 'type') {
+//       items = pinfo.map(element => <li>{element}</li>);
+//     }
+//     else if (title === 'base'){
+//       const kys = Object.keys(pinfo)
+//       items = kys.map(item=><li>{pinfo[item]}: {item}</li>)
+//     }
+
+//     return (
+//       <main
+//         style={{ padding: "1rem" }}
+//       >
+//         <div 
+//           style={{lineHeight: "25px", textAlign: "left"}}
+//         >
+          
+//           <h3> {titmod} </h3>
+//           <ul> {items} </ul>
+//         </div>
+//       </main>
+
+//     )
+//   }
+// }

@@ -10,7 +10,7 @@ export default function Pokemon() {
   let params = useParams();
   // console.log(params)
   if (pokedata.length > 0) {
-    let pkmn = pokedata.find(item => item.id.toString() === params.pokemonID)
+    const pkmn = pokedata.find(item => item.id.toString() === params.pokemonID)
     // console.log(pkmn);
     return (
       <main style={{ padding: "1rem" }}>

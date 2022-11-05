@@ -21,7 +21,7 @@ export default function App() {
                 <p>Select a pokemon character</p>
               </main>} />
             <Route path=":pokemonID" element={<Pokemon />} />
-            {/* <Route path=":pokemonID/:info" element={<PokemonInfo />} /> */}
+            <Route path=":pokemonID/:info" element={<PokemonInfo />} />
             {/* </Route> */}
           </Route>
           <Route
