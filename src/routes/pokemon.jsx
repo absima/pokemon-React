@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import typeColors from "../colorData/typeColors";
 import { useContext } from "react";
 import { ProjContext } from "../setContext";
+import { NavLink, Outlet } from "react-router-dom";
 
 const clrs = typeColors();
 
@@ -15,6 +16,30 @@ export default function Pokemon() {
     return (
       <main style={{ padding: "1rem" }}>
         <div className="pokepardiv">
+          <nav>
+            {
+              Object.keys(pkmn).map((item) => (
+                <NavLink
+                  style={({ isActive }) => {
+                    return {
+                      // display: "inline-block",
+                      // margin: "1rem 0",
+                      color: isActive ? "green" : "",
+                    };
+                  }}
+                  to={`/pokemon/${pkmn.id}/${item}`}
+                  // to={`#`}
+                  key={item}
+                >
+                  <span className="span">
+                    {item}
+                  </span>
+
+                </NavLink>
+              ))
+            }
+          </nav>
+
           <div className="pokemon-card-container"
             style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 90%, 50%)` }}
           >
@@ -81,8 +106,9 @@ export default function Pokemon() {
                 </div>
               </div>
             </div>
-            <h1 className="pokemon-logo"> {pkmn.name.english} </h1>
+            <h1 className="pokemon-logo"> {pkmn.id} </h1>            
           </div>
+          <Outlet />
         </div>
       </main>
     );
