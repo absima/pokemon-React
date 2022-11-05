@@ -1,25 +1,17 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import {
   NavLink,
   Outlet,
   useSearchParams,
 } from "react-router-dom";
+import { useContext } from "react";
+import { ProjContext } from "../setContext";
 
 export default function Pokemons() {
-  const [pokedata, setPokedata] = useState([]);
-  const [ error, setError] = useState('');
-  useEffect(() => {
-    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
-    .then((response) => response.json())
-    .then((output)=> setPokedata(output))
-    .catch(() => {
-      setError("Error: Fetching Failed");
-    })
-  }, [])
-
+  const { pokedata } = useContext(ProjContext);
 
   let [searchParams, setSearchParams] = useSearchParams();
-  if (pokedata.length){
+  if (pokedata.length) {
     return (
       <div style={{ display: "flex" }}>
         <nav
@@ -56,6 +48,7 @@ export default function Pokemons() {
                   };
                 }}
                 to={`/pokemon/${pkmns.id}`}
+                // to={`#`}
                 key={pkmns.id}
               >
                 {pkmns.name.english}
@@ -66,5 +59,5 @@ export default function Pokemons() {
       </div>
     );
   }
-  
+
 }

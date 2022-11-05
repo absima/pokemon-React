@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import typeColors from "../colorData/typeColors";
+// import typeColors from "../colorData/typeColors";
 
-const clrs = typeColors();
-console.log(clrs)
+// const clrs = typeColors();
 
 export default function PokemonInfo() {
-  let params = useParams();
+  let pinfo_params = useParams();
   const [pinfo, setPinfo] = useState(0);
   const [perror, setPerror] = useState('');
   const [items, setItems] = useState('');
   useEffect(() => {
-    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${params.pokemonID}/${params.info}`)
+    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex/${pinfo_params.pokemonID}/${pinfo_params.info}`)
       .then((response) => response.json())
       .then((output) => setPinfo(output))
       .catch(() => {
@@ -22,7 +21,7 @@ export default function PokemonInfo() {
   console.log('pinfo', pinfo)
   if (pinfo !== 0) {
     let items
-    const title = params.info;
+    const title = pinfo_params.info;
     const titmod = title.charAt(0).toUpperCase()+title.slice(1);
     if (title === 'name') {
       const kys = Object.keys(pinfo)
