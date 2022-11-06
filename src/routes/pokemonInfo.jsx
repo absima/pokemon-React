@@ -54,7 +54,7 @@ export default function PokemonInfo() {
               </div>
             </NavLink> 
           </nav>
-          <div style={{lineHeight: "25px", textAlign: "left"}}>  
+          <div className="pokeinfo">  
             <h3> {titmod} </h3>
             <ul> {items} </ul>
           </div>

@@ -1,11 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
-import Searchbar from "./searchbar";
-import { useContext } from "react";
-import { ProjContext } from "../setContext";
-import Pokemons from "./pokemons";
 
 export default function Outline() {
-  const {pokedata, error, searchParams, setSearchParams} = useContext(ProjContext);
   return (
     <div>
       <h1>Pokefight</h1>
