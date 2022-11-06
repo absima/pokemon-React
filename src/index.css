@@ -89,38 +89,44 @@ button:focus-visible {
   height: 1.5rem;
 }
 
-.cardhead{
+.cardhead {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0rem;
 }
+
 .backdiv {
-  font-size: 20px;  
+  font-size: 20px;
   text-align: left;
 }
-.spandiv{
+
+.spandiv {
   display: inline-flex;
 }
+
 .span {
   padding: 0rem 1rem 1rem 1rem;
 }
+
 .pkmnlist {
   display: flex;
   flex-wrap: wrap;
 }
 
-.hp{
+.hp {
   color: rgb(193, 8, 8);
 }
-.hpimg{
+
+.hpimg {
   display: inline-flex;
 }
 
 /* new card css */
-.parcardiv{
+.parcardiv {
   display: flex;
   justify-content: center;
 }
+
 .cardiv {
   font-size: .75rem;
   line-height: .75rem;
@@ -129,6 +135,7 @@ button:focus-visible {
   padding: 0rem .4rem;
   border: .3rem solid hsl(348, 66%, 37%);
   margin: 0rem .5rem;
+  border-radius: 1rem;
   /* display: flex; */
 }
 
@@ -140,6 +147,7 @@ button:focus-visible {
   overflow: hidden;
   white-space: nowrap
 }
+
 .cjf {
   font-size: .5rem;
   font-weight: bold;
@@ -184,6 +192,7 @@ ul li {
   width: 10rem;
   height: 10rem;
 }
+
 .speed {
   padding: 0.2rem 0rem;
   font-size: .7rem;
@@ -214,7 +223,7 @@ ul li {
   background-color: hsl(0, 0%, 100%);
 }
 
-.pokeinfo{
+.pokeinfo {
   line-height: 1rem;
   text-align: center;
 }
