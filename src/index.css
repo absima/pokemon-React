@@ -83,10 +83,10 @@ button:focus-visible {
 }
 
 .input {
-  border: 2px solid red;
+  border: .15rem solid hsl(348, 66%, 37%);
   border-radius: 5px;
   width: 100%;
-  height: 1.5rem;
+  height: 1.8rem;
 }
 
 .cardhead {
@@ -114,7 +114,7 @@ button:focus-visible {
 }
 
 .hp {
-  color: rgb(193, 8, 8);
+  color: hsl(0, 100%, 50%);
 }
 
 .hpimg {
@@ -208,6 +208,7 @@ ul li {
   font-weight: bold;
   text-align: left;
   border-radius: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .type_id {
@@ -221,6 +222,8 @@ ul li {
   color: hsl(0, 0%, 0%);
   font-weight: bold;
   background-color: hsl(0, 0%, 100%);
+  border: .1rem solid hsl(348, 66%, 37%);
+  border-radius: .3rem;
 }
 
 .pokeinfo {
