@@ -125,7 +125,7 @@ button:focus-visible {
   font-size: .75rem;
   line-height: .75rem;
   width: 10rem;
-  height: 16rem;
+  height: 16.2rem;
   padding: 0rem .4rem;
   border: .3rem solid hsl(348, 66%, 37%);
   margin: 0rem .5rem;
@@ -204,7 +204,7 @@ ul li {
 .type_id {
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5rem;
+  padding-top: 0.1rem;
 }
 
 .idtyp {
