@@ -1,41 +1,34 @@
 import { useParams } from "react-router-dom";
-import typeColors from "../colorData/typeColors";
 import { useContext } from "react";
-import { ProjContext } from "../setContext";
+import { ProjContext } from "../../setContext";
 import { NavLink, Outlet } from "react-router-dom";
-import PokeCard from "./card";
-const clrs = typeColors();
+// import typeColors from "../../colorData/typeColors";
+// const clrs = typeColors();
 
-export default function Pokemon() {
+export default function Games() {
   const { pokedata } = useContext(ProjContext);
   let params = useParams();
-  // console.log(params)
   if (pokedata.length > 0) {
-    const pkmn = pokedata.find(item => item.id.toString() === params.pokemonID)
-    // console.log(pkmn);
+    // const pkmn = pokedata.find(item => item.id.toString() === params.id)
     return (
-      <main style={{ padding: "1rem" }}>
-        <div className="pokepardiv">
+      <div style={{ padding: "1rem" }}>
           <div className="pagehead">
-            {/* <div className="arrback"> */}
               <NavLink
                 style={({ isActive }) => {
                   return {
                     color: isActive ? "gray" : "",
                   };
                 }}
-                to={`/pokemon`}
+                to={`/games`}
                 key={"back"}
               >
                 <div className="backtxt">
-                  &#8678; back
+                &#8678; back
                 </div>
-              </NavLink>
-            {/* </div> */}
-
-            <div>
+                   
+              </NavLink>              
               {
-                Object.keys(pkmn).map((item) => (
+                [1,2,3,4,5,6].map((item) => (
                   <NavLink
                     style={({ isActive }) => {
                       return {
@@ -44,26 +37,24 @@ export default function Pokemon() {
                         color: isActive ? "green" : "",
                       };
                     }}
-                    to={`/pokemon/${pkmn.id}/${item}`}
-                    // to={`#`}
+                    to={`/games/game${item}`}
                     key={item}
                   >
                     <div className="spandiv">
                       <span className="span">
-                        {item}
+                        Game {item} 
+                        {/* |{" "} */}
                       </span>
                     </div>
 
 
-                  </NavLink>
+                  </NavLink> 
                 ))
               }
             </div>
-          </div>
-          <PokeCard pkmn={pkmn} clrs={clrs} />
+          <h2 className="gamezone"> Welcome to our game zone</h2>
           <Outlet />
-        </div>
-      </main>
+      </div>
     );
   }
 }

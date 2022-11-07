@@ -38,7 +38,7 @@ export default function PokemonInfo() {
 
     return (
       <main style={{ padding: "1rem" }} >
-        <div>
+        <div className="pagehead">
           <nav>
             <NavLink
               style={({ isActive }) => {
@@ -49,17 +49,18 @@ export default function PokemonInfo() {
               to={`/pokemon/${pkmn.id}`}
               key={"back"}
             >
-              <div className="backdiv">
+              <div className="backtxt">
               &#8678; back
               </div>
             </NavLink> 
           </nav>
+          </div>
+
           <div className="pokeinfo">  
             <h3> {titmod} </h3>
             <ul> {items} </ul>
           </div>
           <Outlet />
-        </div>
         
       </main>
 

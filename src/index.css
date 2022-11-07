@@ -34,37 +34,12 @@ a:hover {
 
 body {
   margin: 0;
-  /* display: flex; */
   place-items: center;
-  /* min-width: 320px;
-  min-height: 100vh; */
-
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: hsl(237, 100%, 70%);
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -74,7 +49,7 @@ button:focus-visible {
   }
 
   a:hover {
-    color: hsla(0, 0%, 0%);
+    color: rgb(235, 8, 8);
   }
 
   button {
@@ -89,12 +64,31 @@ button:focus-visible {
   height: 1.8rem;
 }
 
-.cardhead {
+.parwelcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  width: 60%;
+  height: 20rem;
+  background-image: url("./pokemon.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pagehead {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0rem;
+  white-space: nowrap;
 }
 
+/* .arrback{
+  display: flex;
+} */
 .backdiv {
   font-size: 20px;
   text-align: left;
@@ -121,7 +115,6 @@ button:focus-visible {
   display: inline-flex;
 }
 
-/* new card css */
 .parcardiv {
   display: flex;
   justify-content: center;
@@ -229,4 +222,13 @@ ul li {
 .pokeinfo {
   line-height: 1rem;
   text-align: center;
+}
+
+
+.gamezone{
+  padding: 5rem;
+  border: 0.5rem solid rgba(4, 58, 125, 0.883);
+}
+.backtxt{
+  white-space: nowrap;
 }
