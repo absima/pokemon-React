@@ -14,12 +14,12 @@ function Collection() {
     }, [])
 
     const shuffle = () => {
-    console.log('shuffling')
-    let shuffled = [...pokedata]
-    shuffled.sort(() => Math.random() - 0.5)
-    setShuffledCards(() => shuffled)
-    console.log(shuffled.length, shuffledCards.length)
-}
+        console.log('shuffling')
+        let shuffled = [...pokedata]
+        shuffled.sort(() => Math.random() - 0.5)
+        setShuffledCards(() => shuffled)
+        console.log(shuffled.length, shuffledCards.length)
+    }
 
     const getTenCards = () => setCollectionCards((prev) => {
         console.log('getting cards')
