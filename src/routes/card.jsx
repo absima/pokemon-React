@@ -1,5 +1,11 @@
 
 export default function PokeCard({ pkmn, clrs }) {
+  let url
+  pkmn.id < 650 ?
+    url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg` :
+    url = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pkmn.id}.png`;
+
+
   return (
     <div className="parcardiv">
       <div className="cardiv"
@@ -27,8 +33,9 @@ export default function PokeCard({ pkmn, clrs }) {
         <div className="avatar"
           style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 80%, 20%)` }}
         >
+          { }
           <img className="image"
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg`}
+            src={url}
             alt={`${pkmn.name.english}`}
           />
         </div>
@@ -59,11 +66,11 @@ export default function PokeCard({ pkmn, clrs }) {
 
         <div className="type_id">
           <span className="idtyp"
-            // style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 40%, 40%)` }}
+          // style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 40%, 40%)` }}
           >
             {pkmn.id} </span>
           <span className="idtyp"
-            // style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 40%, 40%)` }}
+          // style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 40%, 40%)` }}
           >
             {pkmn.type[0]}</span>
         </div>
