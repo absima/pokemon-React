@@ -12,9 +12,11 @@ export default function Outline() {
       >
         <Link to="/">Home</Link> |{" "}
         <Link to="/pokemon">Pokémon</Link> |{" "}
+        <Link to="/collection">Collection</Link> |{" "}
         <Link to="/games">Games</Link> |{" "}
-        <Link to="/help">Help</Link>
-        
+        <Link to="/help">Help</Link> 
+
+
       </nav>
       <Outlet />
       {/* <Searchbar /> */}
