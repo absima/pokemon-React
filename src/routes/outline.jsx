@@ -10,7 +10,8 @@ export default function Outline() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/pokemon">Pokemon</Link> |{" "}
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/pokemon">Pokémon</Link> |{" "}
         <Link to="/games">Games</Link> |{" "}
         <Link to="/help">Help</Link>
         

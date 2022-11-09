@@ -11,29 +11,15 @@ export default function Games() {
   if (pokedata.length > 0) {
     // const pkmn = pokedata.find(item => item.id.toString() === params.id)
     return (
-      <div style={{ padding: "1rem" }}>
-          <div className="pagehead">
-              <NavLink
-                style={({ isActive }) => {
-                  return {
-                    color: isActive ? "gray" : "",
-                  };
-                }}
-                to={`/games`}
-                key={"back"}
-              >
-                <div className="backtxt">
-                &#8678; back
-                </div>
-                   
-              </NavLink>              
+      <div 
+      // style={{ padding: "1rem" }}
+      >
+          <div className="pagehead">             
               {
                 [1,2,3,4,5,6].map((item) => (
                   <NavLink
                     style={({ isActive }) => {
                       return {
-                        // display: "inline-block",
-                        // margin: "1rem 0",
                         color: isActive ? "green" : "",
                       };
                     }}
@@ -46,8 +32,6 @@ export default function Games() {
                         {/* |{" "} */}
                       </span>
                     </div>
-
-
                   </NavLink> 
                 ))
               }

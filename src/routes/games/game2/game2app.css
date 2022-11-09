@@ -1,0 +1,61 @@
+.cont {
+  /* width: 100%; */
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  background-color: white;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  position:fixed; 
+  /* top:0;  */
+  right:5rem;
+  top: 20rem;
+}
+
+button {
+  width: 80%;
+  border-radius: 8px;
+  border: 0.2rem solid red;
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgb(6, 58, 116);
+  color: hsl(47, 93%, 48%);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.grid {
+  width: 60%;
+  height: 400px;
+  /* width: 600px; */
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  /* display: flex;
+    flex-wrap: wrap; */
+  justify-content: space-around;
+  padding-bottom: 2rem;
+  margin-bottom: 6rem;
+}
+
+.grid div img {
+  width: 5rem;
+}

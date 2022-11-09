@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
+import Game2app from "./game2app";
 
 export default function GameSima() {
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <main >
       <div className="pagehead">
         <NavLink
           style={({ isActive }) => {
@@ -55,8 +56,12 @@ export default function GameSima() {
           </div>
         </NavLink>
       </div>
+
+      {/* <h2
+      // className="gamezone"
+      >Welcome to Pokésima</h2> */}
+      <Game2app />
       <Outlet />
-      <h2 className="gamezone">Welcome to Pokésima</h2>
     </main>
   );
 }
