@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 // import { ProjContext } from './setContext';
 import Outline from "./routes/outline";
 import Help from "./routes/help";
+import Collection  from "./routes/collection";
 import Pokemons from "./routes/pokemons";
 import Pokemon from "./routes/pokemon";
 import PokemonInfo from "./routes/pokemonInfo";
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/" element={<Outline />} >
       <Route path="/" element={<Welcome />} />
         <Route path="help" element={<Help />} />
+        <Route path="collection" element={<Collection />} />
         <Route path="/pokemon" element={<Pokemons />} />
         <Route path="/pokemon/:pokemonID" element={<Pokemon />} />
         <Route path="/pokemon/:pokemonID/:info" element={<PokemonInfo />} />
