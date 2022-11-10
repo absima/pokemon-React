@@ -4,7 +4,7 @@ cursor: pointer;
 }
 
 .card .front{
-    background-color: white;
+    /* background-color: hsl(224, 53%, 41%); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@ cursor: pointer;
     border: 2px solid black;
     transition: all ease-in 0.2s;
     transition-delay: 0.2s;
-    width: 5rem;
+    /* width: 5rem; */
 }
 
 .flipped .back {
@@ -41,7 +41,21 @@ cursor: pointer;
     transition-delay: 0s;
 }
 
+/* 
 .front{
-  width: 5rem;
+  width: 7rem;
   height: 7rem;
 }
+
+.flipped {
+  height: 7rem;
+  width: 5rem;
+  text-align: center;
+  border-radius: 5rem; 
+  background-color: blueviolet;
+} 
+
+/* .image {
+  width: 10rem;
+  height: 10rem;
+} */
