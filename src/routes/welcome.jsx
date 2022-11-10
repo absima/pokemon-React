@@ -6,7 +6,7 @@ export default function Welcome() {
         className="welcome"
       >
         <h2>Welcome to Pokefight</h2>
-        <img src="/src/images/pokemon.jpeg" alt="" />
+        <img src="src/routes/images/pokemon.jpeg" alt="" />
       </div>
     </div>
 
