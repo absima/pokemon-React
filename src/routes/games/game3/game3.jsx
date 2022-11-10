@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
+import './script.jsx'
+import './style.css'
 
 export default function GameSivak() {
   return (
@@ -31,7 +33,7 @@ export default function GameSivak() {
         >
           <div className="spandiv">
             <span className="span">
-              Pokésivak
+              <h2>Welcome to Pokésivak</h2>
               {/* |{" "} */}
             </span>
           </div>
@@ -56,9 +58,13 @@ export default function GameSivak() {
         </NavLink>
       </div>
 
-      <h2
-      // className="gamezone"
-      >Welcome to Pokésivak</h2>
+      <div className="gamezone">
+        <div className="game">
+          <div id="character"></div>
+          <div id="block"></div>
+        </div>
+        <p>Score: <span id="scoreSpan"></span></p>
+      </div>
       <Outlet />
     </main>
   );
