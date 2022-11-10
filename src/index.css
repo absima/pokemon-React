@@ -67,18 +67,22 @@ h1 {
 }
 
 .parwelcome {
+  /* background-color: bisque; */
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  /* height: 25rem;   */
 }
 
 .welcome {
-  width: 60%;
-  height: 20rem;
-  background-image: url("./pokemon.jpeg");
-  background-size: cover;
+  background-size: 24rem;
+  background-image: url("/public/pokemon.jpeg");
+  /* background-size: cover; */
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
+  /* resize: both; */
+  overflow: scroll;
 }
 
 .pagehead {

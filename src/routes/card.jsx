@@ -22,7 +22,7 @@ export default function PokeCard({ pkmn, deNames, clrs }) {
             <div className="hp">{pkmn.base.HP} HP</div> &nbsp;
             <div>
               <img className="type_image"
-                src={`/src/typeLogos/${pkmn.type[0]}.png`}
+                src={`/public/typeLogos/${pkmn.type[0]}.png`}
                 alt=""
               />
             </div>
