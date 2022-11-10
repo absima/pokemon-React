@@ -38,8 +38,8 @@ function Game2app() {
   }
 
   let lID = useParams().levelID
-  
-  const level = parseInt(lID[lID.length-1]);
+
+  const level = parseInt(lID[lID.length - 1]);
   const size = (level + 1) * 2
   console.log(level)
   console.log(size)
@@ -109,11 +109,19 @@ function Game2app() {
   }, [choiceOne, choiceTwo]);
   let ncol;
   level === 1 || level === 2 ? ncol = 4 : ncol = level + 1
+
+  // const para = document.querySelector('#p1');
+  // para.addEventListener('click', updateName);
+
+  // function updateName() {
+  //   const name = prompt('Enter a new name');
+  //   para.textContent = `player 1: ${name}`;
+  // }
   return (
     <div className='cont'>
       <div className='pagehead'>
         <div className='backdiv'>
-        <NavLink
+          <NavLink
             style={({ isActive }) => {
               return {
                 color: isActive ? "gray" : "",
@@ -127,7 +135,7 @@ function Game2app() {
           </NavLink>
 
         </div>
-         
+
         <div className='buttons'>
           <span>
             <button
@@ -141,7 +149,12 @@ function Game2app() {
             <p>Trial Count: {turn} </p>
           </span> &nbsp; &nbsp; &nbsp;
           <span className='scores'>
-            <p>Scores: [player 1: &nbsp; player 2: ]</p>
+            Scores: [
+            {/* <input type="text" />
+            <input type="text" /> */}
+            <span id='p1'> Player 1: </span> &nbsp;
+            <span id='p2'> Player 1: </span>
+            ]
           </span>
 
         </div>
