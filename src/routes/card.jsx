@@ -1,18 +1,18 @@
 
-export default function PokeCard({ pkmn, clrs }) {
+export default function PokeCard({ pkmn, deNames, clrs }) {
   let url
   pkmn.id < 650 ?
     url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg` :
     url = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pkmn.id}.png`;
-
 
   return (
     <div className="parcardiv">
       <div className="cardiv"
         style={{ backgroundColor: `hsl(${clrs[pkmn.type[0]]}, 100%, 50%)` }} >
         <div className="name3lang">
+          <span className="cjfde"> {deNames[pkmn.id - 1]} </span> <span className="pref">(DE)</span>
           <span className="cjf"> {pkmn.name.chinese} </span> <span className="pref">(CH)</span>
-          <span className="cjf"> {pkmn.name.japanese} </span> <span className="pref">(JP)</span>
+          {/* <span className="cjf"> {pkmn.name.japanese} </span> <span className="pref">(JP)</span> */}
           <span className="cjf"> {pkmn.name.french} </span> <span className="pref">(FR)</span>
         </div>
 

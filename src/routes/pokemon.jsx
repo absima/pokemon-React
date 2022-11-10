@@ -5,6 +5,7 @@ import { ProjContext } from "../setContext";
 import { NavLink, Outlet } from "react-router-dom";
 import PokeCard from "./card";
 const clrs = typeColors();
+import { deNames } from "../namesDE";
 
 export default function Pokemon() {
   const { pokedata } = useContext(ProjContext);
@@ -60,7 +61,7 @@ export default function Pokemon() {
               }
             </div>
           </div>
-          <PokeCard pkmn={pkmn} clrs={clrs} />
+          <PokeCard pkmn={pkmn} deNames = {deNames} clrs={clrs} />
           <Outlet />
         </div>
       </main>

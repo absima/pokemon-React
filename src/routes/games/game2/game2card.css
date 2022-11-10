@@ -30,12 +30,18 @@ cursor: pointer;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 2px solid black;
     transition: all ease-in 0.2s;
     transition-delay: 0.2s;
+    width: 5rem;
 }
 
 .flipped .back {
     transform: rotateY(90deg);
     transition-delay: 0s;
+}
+
+.front{
+  width: 5rem;
+  height: 7rem;
 }

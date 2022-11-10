@@ -1,6 +1,6 @@
 .cont {
   /* width: 100%; */
-  background-color: gray;
+  background-color: rgb(198, 195, 109);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,21 +8,13 @@
 }
 
 .buttons {
-  background-color: white;
-  width: 16%;
   display: flex;
-  flex-direction: column;
-  position:fixed; 
-  /* top:0;  */
-  right:5rem;
-  top: 20rem;
 }
 
-button {
-  width: 80%;
+.btn{
   border-radius: 8px;
   border: 0.2rem solid red;
-  padding: 0.5em;
+  padding: 0.4rem;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -32,22 +24,27 @@ button {
   transition: border-color 0.25s;
 }
 
-button:hover {
+.btn:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.btn:focus,
+.btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.backBtn{
+  display: flex;
+  justify-content: space-between;
+}
 .grid {
-  width: 60%;
+  /* background-color: red; */
+  width: 90%;
   height: 400px;
   /* width: 600px; */
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   grid-gap: 1em;
   /* display: flex;
     flex-wrap: wrap; */
@@ -58,4 +55,16 @@ button:focus-visible {
 
 .grid div img {
   width: 5rem;
+  height: 7rem;
+}
+
+.levelpar{
+  display: flex;
+  justify-content: center;
+}
+.levels{
+  text-align: left;
+}
+.scores{
+  font-weight: bold;
 }

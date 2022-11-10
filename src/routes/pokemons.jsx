@@ -9,7 +9,7 @@ import { ProjContext } from "../setContext";
 import Searchbar from "./searchbar";
 import PokeCard from "./card";
 import typeColors from "../colorData/typeColors";
-
+import { deNames } from "../namesDE";
 // export default function Pokemons() {
 //   const { pokedata } = useContext(ProjContext);
 
@@ -103,7 +103,7 @@ export default function Pokemons() {
                   key={pkmns.id}
                 >
                   {/* <div style={{ width: "2rem" }} > {pkmns.id} </div> */}
-                  <PokeCard pkmn = {pkmns} clrs = {clrs}/>
+                  <PokeCard pkmn = {pkmns} deNames = {deNames} clrs = {clrs}/>
                 </NavLink>
               ))}
           </div>
