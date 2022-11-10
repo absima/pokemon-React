@@ -82,9 +82,10 @@ h1 {
 }
 
 .pagehead {
+  /* background-color: black; */
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
   white-space: nowrap;
 }
 
@@ -92,10 +93,16 @@ h1 {
   display: flex;
 } */
 .backdiv {
+  /* background-color: blueviolet; */
   font-size: 20px;
   text-align: left;
+  padding: 0.5rem;
 }
-
+.backtxt{
+  white-space: nowrap;
+  color: gray;
+  padding-top: .5rem;
+}
 .spandiv {
   display: inline-flex;
 }
@@ -147,7 +154,10 @@ h1 {
   font-size: .5rem;
   font-weight: bold;
 }
-
+.cjfde{
+  font-size: .7rem;
+  font-weight: bold;
+}
 .pref {
   font-size: .5rem;
 }
@@ -230,8 +240,4 @@ ul li {
 .gamezone{
   padding: 5rem;
   border: 0.5rem solid rgba(4, 58, 125, 0.883);
-}
-.backtxt{
-  white-space: nowrap;
-  color: gray;
 }

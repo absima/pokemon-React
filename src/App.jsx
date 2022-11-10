@@ -13,6 +13,7 @@ import Games from "./routes/games/games";
 import GameDavid from "./routes/games/game1/game1";
 import GameSima from "./routes/games/game2/game2";
 import GameSivak  from "./routes/games/game3/game3";
+import Game2app from "./routes/games/game2/game2app";
 
 export default function App() {
   // const {Outline,Pokemons,Pokemon,PokemonInfo,Help} = useContext(ProjContext);
@@ -32,8 +33,8 @@ export default function App() {
         <Route path="/games//game1/:id/:info" element={<GameDavid />} /> */}
 
         <Route path="/games/game2" element={<GameSima />} />
-        {/* <Route path="/games//game2/:id" element={<GameSima />} />
-        <Route path="/games//game2/:id/:info" element={<GameSima />} /> */}
+        <Route path="/games/game2/:levelID" element={<Game2app />} />
+        {/* <Route path="/games//game2/:id/:info" element={<GameSima />} /> */}
 
         <Route path="/games/game3" element={<GameSivak />} />
         {/* <Route path="/games//game3/:id" element={<GameSivak />} />
