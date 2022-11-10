@@ -76,13 +76,14 @@ h1 {
 }
 
 .welcome {
-  background-size: 24rem;
-  background-image: url("/public/pokemon.jpeg");
+  
+  /* background-size: 24rem; */
+  /* background-image: url("/src/images/pokemon.jpeg"); */
   /* background-size: cover; */
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
   /* resize: both; */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .pagehead {

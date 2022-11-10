@@ -18,7 +18,7 @@ function Game2card(props) {
           backgroundColor: "hsl(224, 53%, 41%)"
         }}
         />
-        <img className='back' src="/public/card_back.png" alt="back" onClick={() => handleChoice()} />
+        <img className='back' src="/src/images/card_back.png" alt="back" onClick={() => handleChoice()} />
       </div>
     </div>
   );
