@@ -19,7 +19,7 @@
 // ];
 const clrs = {
   Bug: 67,
-  Dark: 24,
+  Dark: 20,
   Dragon: 257,
   Electric: 48,
   Fairy: 330,
