@@ -1,5 +1,5 @@
 
-export default function PokeCard({ pkmn, deNames, clrs }) {
+export default function PokeCardGame3({ pkmn, deNames, clrs }) {
   let url
   pkmn.id < 650 ?
     url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg` :

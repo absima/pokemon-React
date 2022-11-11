@@ -1,10 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
-import './script.jsx'
+import { useState } from "react";
 import './style.css'
+import PokemonsGame3 from "../../pokemonGame3";
+// import './script.js'
 
 export default function GameSivak() {
+  const [animate, setAnimate] = useState(false)
+
+  const handleJump = (e) => {
+    e.preventDefault();
+    setAnimate(!animate)
+  }
+
   return (
-    <main >
+    <main>
       <div className="pagehead">
         <NavLink
           style={({ isActive }) => {
@@ -57,13 +66,16 @@ export default function GameSivak() {
           </div>
         </NavLink>
       </div>
-
+      <div>
+        <PokemonsGame3 />
+      </div>
       <div className="gamezone">
         <div className="game">
-          <div id="character"></div>
+          <div className={animate ? "animate" : ""} id="character"></div>
           <div id="block"></div>
         </div>
         <p>Score: <span id="scoreSpan"></span></p>
+        <button onClick={handleJump}>Jump</button>
       </div>
       <Outlet />
     </main>
