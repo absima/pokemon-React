@@ -1,8 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 import './style.css'
+import pika from '../../images/pika.gif';
 import PokemonsGame3 from "../../pokemonGame3";
-// import './script.js'
 
 export default function GameSivak() {
   const [animate, setAnimate] = useState(false)
@@ -71,7 +71,7 @@ export default function GameSivak() {
       </div>
       <div className="gamezone">
         <div className="game">
-          <div className={animate ? "animate" : ""} id="character"></div>
+          <div className={animate ? "animate" : ""} id="character"><img src={pika} alt="555" /></div>
           <div id="block"></div>
         </div>
         <p>Score: <span id="scoreSpan"></span></p>
@@ -81,3 +81,4 @@ export default function GameSivak() {
     </main>
   );
 }
+
