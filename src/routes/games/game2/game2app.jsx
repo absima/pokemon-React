@@ -16,6 +16,14 @@ function Game2app() {
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(true);
   const [startFlip, setStartFlip] = useState(true);
+  const [point, setPoint] = useState(0)
+  // const [point1, setPoint1] = useState(0);
+  // const [point2, setPoint2] = useState(0);
+  // const [match, setMatch] = useState('false');
+  // const [active, setActive] = useState(0);
+
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,8 +49,8 @@ function Game2app() {
 
   const level = parseInt(lID[lID.length - 1]);
   const size = (level + 1) * 2
-  console.log(level)
-  console.log(size)
+  // console.log(level)
+  // console.log(size)
   const randoms = generateDistinctRandomNumbers(size);
   const selected = [];
   randoms.map(item => {
@@ -53,6 +61,16 @@ function Game2app() {
     )
   }
   )
+  console.log(cards)
+  console.log("point", point)
+
+
+  let ncol;
+  level === 1 || level === 2 ? ncol = 4 : ncol = level + 1
+  // let active = Math.round(Math.random());
+  // const scores = [0, 0]
+
+  // console.log(active)
 
   function shuffleCards() {
     //setCards(null)
@@ -90,9 +108,12 @@ function Game2app() {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
+        // setMatch(true) //
+
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
+              setPoint(pt => pt + 1)
               return { ...card, matched: true }
             } else {
               return card
@@ -100,23 +121,16 @@ function Game2app() {
           })
         })
         resetTurn();
-      } else {
+      }
+      else {
         setTimeout(() => {
           resetTurn();
         }, 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
-  let ncol;
-  level === 1 || level === 2 ? ncol = 4 : ncol = level + 1
 
-  // const para = document.querySelector('#p1');
-  // para.addEventListener('click', updateName);
-
-  // function updateName() {
-  //   const name = prompt('Enter a new name');
-  //   para.textContent = `player 1: ${name}`;
-  // }
+  let leave = false;
   return (
     <div className='cont'>
       <div className='pagehead'>
@@ -149,25 +163,19 @@ function Game2app() {
             <p>Trial Count: {turn} </p>
           </span> &nbsp; &nbsp; &nbsp;
           <span className='scores'>
-            Scores: [
-            {/* <input type="text" />
-            <input type="text" /> */}
-            <span id='p1'> Player 1: </span> &nbsp;
-            <span id='p2'> Player 1: </span>
-            ]
+            <p>Score: {point} </p>
           </span>
 
         </div>
       </div>
 
-      {/* <div className='cont'> */}
-      {/* <div> */}
+      {/* {
+        point !== 2 * size && !leave? */}
       <div
         className="grid"
         style={{
           gridTemplateColumns: Array(ncol).fill('1fr').join(" ")
-        }}
-      >
+        }} >
         {cards.map(card => (
           <Game2card
             key={card.id}
@@ -179,10 +187,18 @@ function Game2app() {
           />
         ))}
       </div>
-      {/* </div> */}
-      {/* </div> */}
+
+      {/* : 
+          <div> 
+            <h2> Congrats! you won </h2>
+            <h3> your current score stands at {point}</h3>
+          </div>
+      }
+      {point !== 2 * size? leave=true: true } */}
+
     </div>
-  );
+  )
+
 }
 
 export default Game2app;
