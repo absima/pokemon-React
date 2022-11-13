@@ -6,7 +6,7 @@ export default function Welcome() {
         className="welcome"
       >
         <h2>Welcome to Pokefight</h2>
-        <img src="https://raw.githubusercontent.com/absima/lg/main/pokemon.jpeg" alt="" />
+        <img src="https://raw.githubusercontent.com/absimath/pokestuff/main/pokemon.jpeg" alt="" />
       </div>
     </div>
 
