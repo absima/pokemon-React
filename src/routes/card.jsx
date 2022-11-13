@@ -1,9 +1,9 @@
 
 export default function PokeCardGame3({ pkmn, deNames, clrs }) {
-  let url
-  pkmn.id < 650 ?
-    url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pkmn.id}.svg` :
-    url = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pkmn.id}.png`;
+  const prfx = `https://raw.githubusercontent.com/absimath/pokestuff/6ff554ee986e1d28f64a9ed4abadf5aec586321f/pokemons/${pkmn.id}.`
+
+  let url;
+  pkmn.id < 650 ? url = prfx + "svg" : url = prfx + "png"; 
 
   return (
     <div className="parcardiv">
@@ -23,8 +23,8 @@ export default function PokeCardGame3({ pkmn, deNames, clrs }) {
             <div>
               <img className="type_image"
                 // src={`/src/routes/images/typeLogos/${pkmn.type[0]}.png`}
-                src={`https://raw.githubusercontent.com/absima/lg/main/${pkmn.type[0]}.png`}
-                
+                src={`https://raw.githubusercontent.com/absimath/pokestuff/main/typeLogos/${pkmn.type[0]}.png`}
+
                 alt=""
               />
             </div>

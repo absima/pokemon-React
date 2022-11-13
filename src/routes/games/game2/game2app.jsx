@@ -55,8 +55,9 @@ function Game2app() {
   const selected = [];
   randoms.map(item => {
     selected.push(
+      
       {
-        "src": `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item}.svg`, matched: false
+        "src": `https://raw.githubusercontent.com/absimath/pokestuff/6ff554ee986e1d28f64a9ed4abadf5aec586321f/pokemons/${item}.svg`, matched: false
       }
     )
   }

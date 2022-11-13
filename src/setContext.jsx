@@ -29,13 +29,3 @@ const CtxtProvider = (props) => {
 
 export const ProjContext = createContext()
 export default CtxtProvider;
-
-
-              // pokedata, 
-              // setPokedata,
-              // pkmn, 
-              // setPkmn,
-              // pinfo, 
-              // setPinfo,
-              // pkmn_param,
-              // pinfo_params,
