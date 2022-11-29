@@ -20,7 +20,7 @@ function Game2card(props) {
         />
         <img 
         className='back' 
-        src="https://raw.githubusercontent.com/absima/lg/main/card_back.png" alt="back"
+        src="https://raw.githubusercontent.com/absimath/lg/main/card_back.png" alt="back"
         // src=''
         // alt=''
         onClick={() => handleChoice()} />
