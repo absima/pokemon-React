@@ -8,15 +8,15 @@ import { useSearchParams } from "react-router-dom";
 // import Help from "./routes/help";
 
 const CtxtProvider = (props) => {
-  const api = 'http://localhost:5000'
-
+  // const api = 'http://localhost:5000'
+ console.log(import.meta.env.VITE_API_URL + `pokemons`)
   const [pokedata, setPokedata] = useState([]);
   const [error, setError] = useState('');
   let [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     // fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
-    fetch(`${api}/pokemons`)
+    fetch(import.meta.env.VITE_API_URL + `pokemons`)
       .then((response) => response.json())
       .then((output) => setPokedata(output))
       .catch(() => {
@@ -32,3 +32,8 @@ const CtxtProvider = (props) => {
 
 export const ProjContext = createContext()
 export default CtxtProvider;
+
+
+
+
+
