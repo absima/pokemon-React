@@ -8,12 +8,15 @@ import { useSearchParams } from "react-router-dom";
 // import Help from "./routes/help";
 
 const CtxtProvider = (props) => {
+  const api = 'http://localhost:5000'
+
   const [pokedata, setPokedata] = useState([]);
   const [error, setError] = useState('');
   let [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
+    // fetch(`https://pokemon-dss-api.herokuapp.com/pokedex`)
+    fetch(`${api}/pokemons`)
       .then((response) => response.json())
       .then((output) => setPokedata(output))
       .catch(() => {
