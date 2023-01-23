@@ -141,7 +141,7 @@ function Memo() {
               to={`/games/memory`}
               key={'back'}
             >
-              <div className="backtxt">&#8678; back</div>
+              <div className="backtxt">&#8678; </div>
             </NavLink>
           {/* </div> */}
           &nbsp; &nbsp; &nbsp;
@@ -152,7 +152,7 @@ function Memo() {
           </span>{' '}
           &nbsp; &nbsp; &nbsp;
           <span>
-            <p>Trial Count: {turn} </p>
+            <p>Flip Count: {turn} </p>
           </span>{' '}
           &nbsp; &nbsp; &nbsp;
           <span className="scores">

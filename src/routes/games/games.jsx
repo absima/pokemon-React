@@ -11,22 +11,19 @@ export default function Games() {
   if (pokedata.length > 0) {
     // const pkmn = pokedata.find(item => item.id.toString() === params.id)
     return (
-      <div 
+      <div
       // className="gamezone"
       >
-        <h2
-        style={{
-        fontSize: '2rem',
-        }
-        }
-        >Welcome to the game zone</h2>
+        <h2>Welcome to the game zone</h2>
         <h3
-        style={{
-          marginTop: '2rem',
-          fontSize: '1.5rem',
-        }
-        }
-        > Choose a game:</h3>
+          style={{
+            marginTop: '2rem',
+            fontSize: '1.5rem',
+          }}
+        >
+          {' '}
+          Choose a game:
+        </h3>
         <div>
           <ul>
             <li>

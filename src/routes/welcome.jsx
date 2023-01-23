@@ -11,9 +11,7 @@ export default function Welcome() {
               width: '100%',
             }}
           >
-            <h2 style={{ fontSize: '2rem', lineHeight: '1.0 rem' }}>
-              Welcome to Pokéstuff
-            </h2>
+            <h2>Welcome to Pokéstuff</h2>
             <img
               style={{
                 maxWidth: '100%',
