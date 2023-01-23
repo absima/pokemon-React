@@ -1,50 +1,46 @@
-// import { useContext } from "react";
-import { Routes, Route } from "react-router-dom";
-// import { ProjContext } from './setContext';
-import Outline from "./routes/outline";
-import Help from "./routes/help";
-import Collection from "./routes/collection";
-import Pokemons from "./routes/pokemons";
-import Pokemon from "./routes/pokemon";
-import PokemonInfo from "./routes/pokemonInfo";
+import { Routes, Route } from 'react-router-dom';
+import Pokemons from './routes/pokemons';
+import Pokemon from './routes/pokemon';
+import PokemonInfo from './routes/pokemonInfo';
 // import Searchbar from "./routes/searchbar";
-import Welcome from "./routes/welcome";
-import Games from "./routes/games/games";
-import GameDavid from "./routes/games/game1/game1";
-import GameSima from "./routes/games/game2/game2";
-import GameSivak from "./routes/games/game3/game3";
-import Game2app from "./routes/games/game2/game2app";
+import Welcome from './routes/welcome';
+import Games from './routes/games/games';
+import Memory from './routes/games/memory/memory';
+import Memo from './routes/games/memory/memoryapp';
+import Pokefight from './routes/games/pokefight/pokefight';
+import About from './routes/about';
+import MemoryRules from './routes/games/memory/rules';
 
+import Entry from './routes/entry';
 export default function App() {
   // const {Outline,Pokemons,Pokemon,PokemonInfo,Help} = useContext(ProjContext);
   return (
     <Routes>
-      <Route path="/" element={<Outline />} >
+      <Route path="/" element={<Entry />}>
         <Route path="/" element={<Welcome />} />
-        <Route path="help" element={<Help />} />
-        <Route path="collection" element={<Collection />} />
+        {/* <Route path="/help" element={<Help />} /> */}
+        <Route path="/about" element={<About />} />
         <Route path="/pokemon" element={<Pokemons />} />
         <Route path="/pokemon/:pokemonID" element={<Pokemon />} />
         <Route path="/pokemon/:pokemonID/:info" element={<PokemonInfo />} />
-        
+
         <Route path="/games" element={<Games />} />
-        <Route path="/games/game1" element={<GameDavid />} />
-        {/* <Route path="/games//game1/:id" element={<GameDavid />} />
-        <Route path="/games//game1/:id/:info" element={<GameDavid />} /> */}
+        <Route path="/games/memory" element={<Memory />} />
+        <Route path="/games/memory/:levelID" element={<Memo />} />
+        <Route path="/games/memory/rules" element = {<MemoryRules/>}/>
+        {/* <Route path="/games//memory/:id/:info" element={<GameSima />} /> */}
 
-        <Route path="/games/game2" element={<GameSima />} />
-        <Route path="/games/game2/:levelID" element={<Game2app />} />
-        {/* <Route path="/games//game2/:id/:info" element={<GameSima />} /> */}
+        <Route path="/games/contest" element={<Pokefight />} />
+        
 
-        <Route path="/games/game3" element={<GameSivak />} />
-        {/* <Route path="/games//game3/:id" element={<GameSivak />} />
-        <Route path="/games//game3/:id/:info" element={<GameSivak />} /> */}
-
-        <Route path="*" element={
-          <main style={{ padding: "1rem" }}>
-            <p>There's nothing here!</p>
-
-          </main>} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: '1rem' }}>
+              <p>...under development. Sorry!</p>
+            </main>
+          }
+        />
       </Route>
     </Routes>
   );

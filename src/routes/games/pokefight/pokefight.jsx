@@ -1,21 +1,19 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from 'react-router-dom';
 
-export default function GameDavid() {
+export default function Pokefight() {
   return (
-    <main >
+    <main>
       <div className="pagehead">
         <NavLink
           style={({ isActive }) => {
             return {
-              color: isActive ? "gray" : "",
+              color: isActive ? 'gray' : '',
             };
           }}
           to={`/games`}
-          key={"back"}
+          key={'back'}
         >
-          <div className="backtxt">
-            &#8678; back
-          </div>
+          <div className="backtxt">&#8678; back</div>
         </NavLink>
 
         <NavLink
@@ -23,15 +21,15 @@ export default function GameDavid() {
             return {
               // display: "inline-block",
               // margin: "1rem 0",
-              color: isActive ? "green" : "",
+              color: isActive ? 'green' : '',
             };
           }}
-          to={`/games/game2/pokedave`}
-          key="pokedave"
+          to={`/games/pokefight`}
+          key="pokesima"
         >
           <div className="spandiv">
             <span className="span">
-              Pokédave
+              Contest
               {/* |{" "} */}
             </span>
           </div>
@@ -42,23 +40,22 @@ export default function GameDavid() {
             return {
               // display: "inline-block",
               // margin: "1rem 0",
-              color: isActive ? "green" : "",
+              color: isActive ? 'green' : '',
             };
           }}
-          to={`/games/game2/rules`}
-          key='rules2'
+          to={`/games/memory/rules`}
+          key="rules2"
         >
           <div className="spandiv">
-            <span className="span">
-              rules
-            </span>
+            <span className="span">rules</span>
           </div>
         </NavLink>
       </div>
 
-      <h2
-      // className="gamezone"
-      >Welcome to Pokédave</h2>
+      <div className="gamezone">
+        <h2> Under development ... sorry</h2>
+      </div>
+
       <Outlet />
     </main>
   );
