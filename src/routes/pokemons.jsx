@@ -42,6 +42,7 @@ export default function Pokemons() {
           alignItems: "center",
           justifyContent: "center",
           width: "20rem",
+          maxWidth: "100%",
         }}
       >
         <input
