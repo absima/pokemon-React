@@ -14,7 +14,7 @@ export default function Pokemons() {
   const search = (pokedata, searchParams) => {
     let filter = searchParams.get('filter');
     if (!filter) return null; //pokedata;
-    if (filter === 'all') return pokedata;
+    if (filter === 'all' || filter==='All') return pokedata;
     let idd = pokedata.id.toString();
     let name = pokedata.name.english.toLowerCase();
     let type = pokedata.type.join(' ').toLowerCase();
