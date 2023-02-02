@@ -69,7 +69,7 @@ export default function Footer() {
               className="footer-link"
               style={{color: "white"}}
             >
-              &copy; 2022
+              &copy; {new Date().getFullYear()} Simachew
             </a>
           </p>
         </div>
